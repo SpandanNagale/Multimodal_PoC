@@ -32,3 +32,5 @@ Output:
 - 100% Open Source (no paid APIs)
 - Runs fully on Google Colab
 - Built to demonstrate multimodal orchestration and resourceful design
+
+
