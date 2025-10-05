@@ -21,8 +21,4 @@ Demonstrates a **zero-cost**, open-source multimodal pipeline that ingests text,
 - If image generation fails (complex prompt), fallback to a simpler diffusion prompt  
 - **Future upgrades**: integrate LLaVA-1.6 or Mistral vision modules, multilingual TTS (Bark / XTTS), integrate memory or feedback loop in LangChain
 
-## 🧾 Clone & Run  
-```bash
-git clone ...
-cd Multimodal_PoC
-# Open the notebook in Colab
+
