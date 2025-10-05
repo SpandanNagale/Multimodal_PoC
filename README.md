@@ -1,36 +1,41 @@
-# Multimodal AI Agent (Text → Image → Audio Caption)
+# Multimodal AI Agent: Text → Image → Audio Caption
 
-### Overview
-An end-to-end open-source multimodal AI system that takes a text prompt, generates an image, captions it, and converts the caption into speech — built using only open-source models and free infra.
+## 🚀 Impact Statement  
+Demonstrates a **zero-cost**, open-source multimodal pipeline that ingests text, generates an image, captions it, and produces narration — all orchestrated agentically. This prototype is designed as a minimal yet powerful building block for client-facing applications in marketing, accessibility, and content automation.
 
-### Workflow
-Text → Image (Stable Diffusion) → Caption (BLIP) → Audio (Coqui TTS)
-
-## Architecture Summary & Cost Optimization
-
-- Modular LangGraph pipeline for flexible multimodal orchestration.
-- Lightweight open-source models for image, caption, and audio generation.
-- Designed for zero-cost execution using Google Colab free-tier GPU.
-- Can be easily ported to LangChain or N8N for scalable workflow automation.
+## ✍️ Architecture & Workflow  
+1. **LangGraph (Agent Controller)** — directs which model to call next  
+2. **Stable Diffusion** — converts prompt → image  
+3. **BLIP** — captions the generated image  
+4. **Coqui TTS** — converts caption → audio narration  
 
 
-### Tools Used
-- Diffusers (Stable Diffusion)
-- HuggingFace Transformers (BLIP)
-- Coqui TTS
-- LangGraph (Agentic Orchestration)
-- Colab (Free GPU)
+## 🔧 Tooling & Design Rationale  
+- 100% open-source (no paid APIs)  
+- Optimized to run on free GPU tiers (Colab, Kaggle)  
+- Modular nodes: You can swap the captioning or TTS model easily  
+- Mappable to alternative orchestration frameworks like **LangChain** or **N8N** by converting each node into a chain or workflow block
 
-### Output Example
-Input Prompt: *"A futuristic city skyline at sunset with flying cars"*
+## ⏱ Performance & Metrics  
+| Step | Approx Time | Notes |
+|------|-------------|-------|
+| Text → Image | ~X seconds* | using v1.5 pipeline |
+| Image → Caption | ~Y seconds | BLIP base |
+| Caption → Audio | ~Z seconds | Coqui TTS |
+| Total | ~(X+Y+Z) secs | under acceptable demo latency |
 
-Output:  
-🖼️ Generated Image  
-🗣️ Spoken Caption: “A futuristic city skyline with glowing buildings and flying cars.”
+_\*Times depend on GPU availability and instance._
 
-### Notes
-- 100% Open Source (no paid APIs)
-- Runs fully on Google Colab
-- Built to demonstrate multimodal orchestration and resourceful design
+## 🧩 Limitations & Extensions  
+- Current demo handles single-prompt → single-output; doesn’t support iterative refinement  
+- If image generation fails (complex prompt), fallback to a simpler diffusion prompt  
+- **Future upgrades**: integrate LLaVA-1.6 or Mistral vision modules, multilingual TTS (Bark / XTTS), integrate memory or feedback loop in LangChain
 
+## 🎥 Demo Recording  
+[Link to demo video] (if you have one)
 
+## 🧾 Clone & Run  
+```bash
+git clone ...
+cd Multimodal_PoC
+# Open the notebook in Colab
