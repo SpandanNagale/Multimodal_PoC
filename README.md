@@ -16,16 +16,6 @@ Demonstrates a **zero-cost**, open-source multimodal pipeline that ingests text,
 - Modular nodes: You can swap the captioning or TTS model easily  
 - Mappable to alternative orchestration frameworks like **LangChain** or **N8N** by converting each node into a chain or workflow block
 
-## ⏱ Performance & Metrics  
-| Step | Approx Time | Notes |
-|------|-------------|-------|
-| Text → Image | ~X seconds* | using v1.5 pipeline |
-| Image → Caption | ~Y seconds | BLIP base |
-| Caption → Audio | ~Z seconds | Coqui TTS |
-| Total | ~(X+Y+Z) secs | under acceptable demo latency |
-
-_\*Times depend on GPU availability and instance._
-
 ## 🧩 Limitations & Extensions  
 - Current demo handles single-prompt → single-output; doesn’t support iterative refinement  
 - If image generation fails (complex prompt), fallback to a simpler diffusion prompt  
