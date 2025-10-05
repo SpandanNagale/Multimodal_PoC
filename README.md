@@ -31,9 +31,6 @@ _\*Times depend on GPU availability and instance._
 - If image generation fails (complex prompt), fallback to a simpler diffusion prompt  
 - **Future upgrades**: integrate LLaVA-1.6 or Mistral vision modules, multilingual TTS (Bark / XTTS), integrate memory or feedback loop in LangChain
 
-## 🎥 Demo Recording  
-[Link to demo video] (if you have one)
-
 ## 🧾 Clone & Run  
 ```bash
 git clone ...
